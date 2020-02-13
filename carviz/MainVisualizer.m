@@ -1,7 +1,7 @@
 % have mpt installed and init
 
-filename = 'GoMentum_F5_Run1_ego_from_start'; %the csv file, should be in path
-%filename = '20200212143750'; 
+%filename = 'GoMentum_F5_Run1_ego_from_start'; %the csv file, should be in path
+filename = '20200212143750'; 
 l = 4.3;w=1.85; %car dims
 
 % data for a run
@@ -23,9 +23,9 @@ plot(xu,yu);
 
 figure(3);
 hold all;
-subplot(311);plot(T,xu);ylabel('x (m)');xlabel('Time (s)');
-subplot(312);plot(T,yu);ylabel('x (m)');xlabel('Time (s)');
-subplot(313);plot(T,theta);ylabel('x (m)');xlabel('Time (s)');
+subplot(311);hold all;plot(T,xu);ylabel('x (m)');xlabel('Time (s)');hold all;
+subplot(312);hold all;plot(T,yu);ylabel('x (m)');xlabel('Time (s)');hold all;
+subplot(313);hold a;;plot(T,theta);ylabel('x (m)');xlabel('Time (s)');hold all;
 
 
 
