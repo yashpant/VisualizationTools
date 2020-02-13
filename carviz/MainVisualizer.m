@@ -1,8 +1,8 @@
 % have mpt installed and init
 
-simdata = 1; %change this to 0 if using gomentum data. Sim orientations are in degrees (and offset), GoM in rads.
-%filename = 'GoMentum_F5_Run1_ego_from_start'; %the csv file, should be in path
-filename = '20200212143750';
+simdata = 0; %change this to 0 if using gomentum data. Sim orientations are in degrees (and offset), GoM in rads.
+filename = 'GoMentum_F5_Run1_ego_from_start'; %the csv file, should be in path
+%filename = '20200212143750';
 
 l = 4.3;w=1.85; %car dims
 
@@ -13,7 +13,7 @@ yu = data.position_y;
 if(simdata)
     theta = deg2rad(data.heading+90); %check deg2rad or not, sims are in degrees
 else
-    theta = theta;
+    theta = data.heading;
 end
 T = data.timestamp_sec;
 
@@ -31,7 +31,7 @@ figure(3);
 hold all;
 subplot(311);hold all;plot(T,xu);ylabel('x (m)');xlabel('Time (s)');hold all;
 subplot(312);hold all;plot(T,yu);ylabel('x (m)');xlabel('Time (s)');hold all;
-subplot(313);hold a;;plot(T,theta);ylabel('x (m)');xlabel('Time (s)');hold all;
+subplot(313);hold all;plot(T,theta);ylabel('x (m)');xlabel('Time (s)');hold all;
 
 
 

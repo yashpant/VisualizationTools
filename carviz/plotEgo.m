@@ -27,7 +27,7 @@ for i = 1:numel(T)
     if(i==1)
         pause(T(i)-0);
     else
-        pause(T(i)-T(i-1));
+        pause((T(i)-T(i-1))*0.1);
     end
     mkt = sprintf('%.3f',T(i));
     title(['Time= ',mkt])
